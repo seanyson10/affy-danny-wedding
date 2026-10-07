@@ -180,7 +180,7 @@ const GuestView = ({ setView, timeLeft }) => (
     </button>
 
     <div className="relative h-[600px] w-full bg-gray-900 flex items-end justify-center pb-16">
-      <img src="/imgs/main.jpg" alt="Couple" className="absolute inset-0 w-full h-full object-cover opacity-60" />
+      <img src="./imgs/main.jpg" alt="Couple" className="absolute inset-0 w-full h-full object-cover opacity-60" />
       <div className="relative z-10 text-center text-white p-6">
         <p className="font-serif tracking-widest text-sm mb-4 uppercase letter-spacing-2">Welcome to our wedding</p>
         <h1 className="font-script text-7xl mb-4 drop-shadow-md">Afton & Danny</h1>
@@ -218,7 +218,7 @@ const GuestView = ({ setView, timeLeft }) => (
     </div>
 
     <div className="relative h-[400px] w-full">
-      <img src="/imgs/second.jpg" alt="Affy" className="absolute inset-0 w-full h-full object-cover opacity-100" />
+      <img src="./imgs/second.jpg" alt="Affy" className="absolute inset-0 w-full h-full object-cover opacity-100" />
     </div>
 
     <div className="torn-paper-top pb-24 px-6" style={{ backgroundColor: theme.cream }}>
