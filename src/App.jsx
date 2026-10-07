@@ -599,13 +599,20 @@ export default function WeddingApp() {
     return () => unsubscribeTables();
   }, []);
 
-  if (loading) return (
-    <div className="min-h-screen flex items-center justify-center bg-[#FDFBF7]">
-      <Heart className="w-8 h-8 animate-pulse" style={{ color: theme.sage }} />
-    </div>
+  return (
+    <>
+      <GlobalStyles />
+      {loading ? (
+        <div className="min-h-screen flex items-center justify-center bg-[#FDFBF7]">
+          <Heart className="w-8 h-8 animate-pulse" style={{ color: theme.sage }} />
+        </div>
+      ) : view === 'login' ? (
+        <AdminLogin onLogin={() => setView('admin')} onCancel={() => setView('guest')} />
+      ) : view === 'admin' ? (
+        <AdminView guests={guests} tables={tables} setView={setView} />
+      ) : (
+        <GuestView setView={() => setView('login')} />
+      )}
+    </>
   );
-
-  if (view === 'login') return <AdminLogin onLogin={() => setView('admin')} onCancel={() => setView('guest')} />;
-  if (view === 'admin') return <AdminView guests={guests} tables={tables} setView={setView} />;
-  return <GuestView setView={() => setView('login')} />;
 }
